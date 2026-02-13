@@ -5,6 +5,7 @@ export interface Plugin {
   description: string;
   features: string[];
   phase: number;
+  status?: 'available' | 'coming-soon' | 'beta';
   metaTitle: string;
   metaDescription: string;
   ogImage: string;
