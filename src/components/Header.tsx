@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { AnimatedMeterBridge } from './AnimatedMeterBridge';
 
 const navigation = [
+  { name: 'Home', href: '/' },
   { name: 'Plugins', href: '/plugins' },
+  { name: 'YouTube', href: '/youtube' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Support', href: '/support' },
 ];
 
 export function Header() {
@@ -17,11 +19,16 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">A</span>
+          <Link href="/" className="-m-1.5 p-1.5 flex flex-col items-center gap-1">
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                <span className="text-white font-bold text-sm">A</span>
+              </div>
+              <span className="text-xl font-bold text-white">Amp Spot</span>
             </div>
-            <span className="text-xl font-bold text-white">Amp Spot</span>
+            <div className="hidden sm:block scale-75 origin-top">
+              <AnimatedMeterBridge />
+            </div>
           </Link>
         </div>
         

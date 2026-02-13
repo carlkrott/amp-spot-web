@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { AnimatedMeterBridge } from './AnimatedMeterBridge';
 
 interface HeroProps {
   variant?: 'A' | 'B' | 'C' | 'D' | 'E';
@@ -46,6 +47,10 @@ export function Hero({ variant = 'A' }: HeroProps) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* SSL-style LED Meter Bridge */}
+        <div className="flex justify-center mb-8">
+          <AnimatedMeterBridge />
+        </div>
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
             {content.headline}

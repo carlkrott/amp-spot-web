@@ -4,3 +4,6 @@ export { Footer } from './Footer';
 export { PluginCard } from './PluginCard';
 export { PluginGrid } from './PluginGrid';
 export { PluginFeatures } from './PluginFeatures';
+export { BlogCard } from './BlogCard';
+export { BlogGrid } from './BlogGrid';
+export { LatestBlog } from './LatestBlog';
