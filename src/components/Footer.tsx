@@ -30,16 +30,18 @@ export function Footer() {
     <footer className="bg-slate-950 border-t border-slate-800">
       {/* CTA Section with Full-Width Animation */}
       <div className="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 py-20">
-        {/* Full-width animated background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20 overflow-hidden">
-          <div className="scale-150 transform">
-            <AnimatedMeterBridge />
+        {/* Full-width, full-height animated meter background */}
+        <div className="absolute inset-0 flex items-stretch justify-center opacity-60">
+          <div className="w-full h-full flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16">
+            <div className="w-full h-full flex items-center">
+              <AnimatedMeterBridge />
+            </div>
           </div>
         </div>
         
-        {/* Floating Card */}
+        {/* Glassmorphic Floating Card */}
         <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <div className="rounded-3xl bg-slate-800/60 backdrop-blur-xl border border-slate-700/50 p-10 shadow-2xl hover:border-orange-500/30 transition-all duration-500">
+          <div className="rounded-3xl bg-slate-800/30 backdrop-blur-md border border-slate-700/40 p-10 shadow-2xl hover:border-orange-500/40 transition-all duration-500">
             <div className="text-center">
               <h2 className="text-4xl font-bold text-white sm:text-5xl bg-gradient-to-r from-orange-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Ready to Elevate Your Sound?

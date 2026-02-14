@@ -126,7 +126,7 @@ export function AnimatedMeterBridge() {
   };
 
   return (
-    <div className="flex items-center justify-center gap-1 sm:gap-1.5 py-4">
+    <div className="flex items-stretch justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full h-full py-8">
       {meters.map((meter, meterIndex) => {
         const activeSegments = Math.round(meter.level * NUM_SEGMENTS);
         const activePeakSegment = Math.round(meter.peakLevel * NUM_SEGMENTS);
@@ -134,7 +134,7 @@ export function AnimatedMeterBridge() {
         return (
           <div
             key={meterIndex}
-            className="relative flex flex-col gap-0.5 bg-slate-900/50 rounded-lg p-1.5 backdrop-blur-sm border border-slate-800/50"
+            className="relative flex flex-col gap-1 sm:gap-1.5 bg-slate-900/30 rounded-lg p-2 sm:p-3 backdrop-blur-sm border border-slate-800/30 flex-1 max-w-[4rem] min-h-[200px] sm:min-h-[250px] md:min-h-[300px]"
             style={{
               boxShadow: `
                 inset 0 1px 0 rgba(255,255,255,0.05),
@@ -143,7 +143,7 @@ export function AnimatedMeterBridge() {
             }}
           >
             {/* LED segments */}
-            <div className="flex flex-col-reverse gap-0.5">
+            <div className="flex flex-col-reverse gap-1 sm:gap-1.5 flex-1">
               {Array.from({ length: NUM_SEGMENTS }).map((_, i) => {
                 const isActive = i < activeSegments;
                 const isPeak = i === activePeakSegment && meter.peakLevel > 0.01;
@@ -153,16 +153,17 @@ export function AnimatedMeterBridge() {
                   <div
                     key={i}
                     className={`
-                      relative w-1.5 sm:w-2 h-2 sm:h-2.5 rounded-full transition-all duration-75
-                      ${isActive ? getSegmentColor(segmentIndex) : 'bg-slate-800/60'}
-                      ${isActive ? `shadow-[0_0_8px_currentColor] ${getGlowColor(segmentIndex)}` : ''}
+                      relative w-full h-full min-h-[8px] sm:min-h-[12px] md:min-h-[16px] rounded-md sm:rounded-lg transition-all duration-75
+                      ${isActive ? getSegmentColor(segmentIndex) : 'bg-slate-800/40'}
+                      ${isActive ? `shadow-[0_0_12px_currentColor] ${getGlowColor(segmentIndex)}` : ''}
                       ${isPeak && !isActive ? 'opacity-70' : ''}
                     `}
                     style={{
                       boxShadow: isActive ? `
-                        0 0 4px currentColor,
                         0 0 8px currentColor,
-                        inset 0 1px 0 rgba(255,255,255,0.3)
+                        0 0 16px currentColor,
+                        0 0 24px currentColor,
+                        inset 0 1px 0 rgba(255,255,255,0.4)
                       ` : undefined,
                     }}
                   >
@@ -188,7 +189,7 @@ export function AnimatedMeterBridge() {
             </div>
 
             {/* Meter label */}
-            <div className="mt-1 text-[8px] sm:text-[10px] text-slate-600 font-mono text-center">
+            <div className="mt-1 sm:mt-2 text-[10px] sm:text-xs text-slate-500 font-mono text-center opacity-60">
               {(meterIndex + 1).toString().padStart(2, '0')}
             </div>
           </div>
