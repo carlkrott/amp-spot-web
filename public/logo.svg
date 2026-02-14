@@ -1,12 +1,12 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Gradient definitions -->
+  <!-- VU Meter Background (Orange Theme) -->
   <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    <linearGradient id="meterGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.4" />
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -14,32 +14,38 @@
     </filter>
   </defs>
   
-  <!-- Background circle with glassmorphism effect -->
-  <circle cx="100" cy="100" r="95" fill="url(#logoGradient)" opacity="0.1"/>
-  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.3"/>
+  <!-- VU Meter Housing -->
+  <rect x="30" y="50" width="140" height="100" rx="8" fill="#1a1a1a" stroke="#FF8C00" stroke-width="2"/>
   
-  <!-- Letter "A" with waveform integration -->
-  <path d="M 70 150 L 100 60 L 130 150" 
-        stroke="url(#logoGradient)" 
-        stroke-width="12" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"
-        fill="none"
-        filter="url(#glow)"/>
+  <!-- Meter Face -->
+  <rect x="40" y="60" width="120" height="80" rx="4" fill="#0a0a0a"/>
   
-  <!-- Horizontal bar of "A" with waveform -->
-  <path d="M 80 115 Q 100 110 120 115" 
-        stroke="url(#logoGradient)" 
-        stroke-width="10" 
-        stroke-linecap="round"
-        fill="none"
-        filter="url(#glow)"/>
+  <!-- VU Scale Arc -->
+  <path d="M 60 120 A 40 40 0 0 1 140 120" stroke="#444" stroke-width="1" fill="none"/>
   
-  <!-- Small audio waveform accent -->
-  <path d="M 90 125 L 92 130 L 94 120 L 96 135 L 98 125 L 100 128 L 102 125 L 104 135 L 106 120 L 108 130 L 110 125" 
-        stroke="url(#logoGradient)" 
-        stroke-width="2" 
-        stroke-linecap="round"
-        fill="none"
-        opacity="0.8"/>
+  <!-- Scale Markings -->
+  <line x1="65" y1="120" x2="65" y2="115" stroke="#666" stroke-width="1"/>
+  <line x1="80" y1="118" x2="80" y2="113" stroke="#666" stroke-width="1"/>
+  <line x1="100" y1="117" x2="100" y2="112" stroke="#FFA500" stroke-width="1.5"/>
+  <line x1="120" y1="118" x2="120" y2="113" stroke="#FF8C00" stroke-width="1"/>
+  <line x1="135" y1="120" x2="135" y2="115" stroke="#FF4500" stroke-width="1"/>
+  
+  <!-- Scale Labels -->
+  <text x="65" y="110" fill="#666" font-size="8" text-anchor="middle">-20</text>
+  <text x="80" y="108" fill="#666" font-size="8" text-anchor="middle">-10</text>
+  <text x="100" y="107" fill="#FFA500" font-size="9" text-anchor="middle" font-weight="bold">0</text>
+  <text x="120" y="108" fill="#FF8C00" font-size="8" text-anchor="middle">+3</text>
+  <text x="135" y="110" fill="#FF4500" font-size="8" text-anchor="middle">+6</text>
+  
+  <!-- Needle (pointing to optimal level) -->
+  <g filter="url(#glow)">
+    <line x1="100" y1="120" x2="105" y2="85" stroke="#FF8C00" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="100" cy="120" r="4" fill="#FF8C00"/>
+  </g>
+  
+  <!-- VU Label -->
+  <text x="100" y="140" fill="#FF8C00" font-size="12" text-anchor="middle" font-weight="bold" font-family="monospace">VU</text>
+  
+  <!-- Accent Glow -->
+  <rect x="40" y="60" width="120" height="80" rx="4" fill="url(#meterGlow)" opacity="0.1"/>
 </svg>
