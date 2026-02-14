@@ -75,7 +75,7 @@ export function Footer() {
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-2">
               <Image 
-                src="/logo-icon.svg" 
+                src="/logo-approved.svg" 
                 alt="Amp Spot Logo" 
                 width={32} 
                 height={32}

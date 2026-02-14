@@ -22,7 +22,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <Image 
-              src="/logo.svg" 
+              src="/logo-approved.svg" 
               alt="Amp Spot Logo" 
               width={32} 
               height={32}
@@ -86,7 +86,7 @@ export function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
                 <Image 
-                  src="/logo.svg" 
+                  src="/logo-approved.svg" 
                   alt="Amp Spot Logo" 
                   width={32} 
                   height={32}
