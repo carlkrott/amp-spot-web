@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimatedMeterBridge } from './AnimatedMeterBridge';
 
 const footerLinks = {
@@ -73,9 +74,13 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
+              <Image 
+                src="/logo-icon.svg" 
+                alt="Amp Spot Logo" 
+                width={32} 
+                height={32}
+                className="h-8 w-8"
+              />
               <span className="text-xl font-bold text-white">Amp Spot</span>
             </Link>
             <p className="text-sm leading-6 text-gray-400">

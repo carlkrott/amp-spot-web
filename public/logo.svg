@@ -1,51 +1,46 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- VU Meter Background (Orange Theme) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <!--
+    Amp Spot Full Lockup - Horizontal
+    Icon + Wordmark for headers, social banners
+  -->
+  
   <defs>
-    <linearGradient id="meterGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.4" />
+    <linearGradient id="lockupGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A3C94A"/>
+      <stop offset="100%" style="stop-color:#6B8A28"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&amp;display=swap');
+    </style>
   </defs>
   
-  <!-- VU Meter Housing -->
-  <rect x="30" y="50" width="140" height="100" rx="8" fill="#1a1a1a" stroke="#FF8C00" stroke-width="2"/>
-  
-  <!-- Meter Face -->
-  <rect x="40" y="60" width="120" height="80" rx="4" fill="#0a0a0a"/>
-  
-  <!-- VU Scale Arc -->
-  <path d="M 60 120 A 40 40 0 0 1 140 120" stroke="#444" stroke-width="1" fill="none"/>
-  
-  <!-- Scale Markings -->
-  <line x1="65" y1="120" x2="65" y2="115" stroke="#666" stroke-width="1"/>
-  <line x1="80" y1="118" x2="80" y2="113" stroke="#666" stroke-width="1"/>
-  <line x1="100" y1="117" x2="100" y2="112" stroke="#FFA500" stroke-width="1.5"/>
-  <line x1="120" y1="118" x2="120" y2="113" stroke="#FF8C00" stroke-width="1"/>
-  <line x1="135" y1="120" x2="135" y2="115" stroke="#FF4500" stroke-width="1"/>
-  
-  <!-- Scale Labels -->
-  <text x="65" y="110" fill="#666" font-size="8" text-anchor="middle">-20</text>
-  <text x="80" y="108" fill="#666" font-size="8" text-anchor="middle">-10</text>
-  <text x="100" y="107" fill="#FFA500" font-size="9" text-anchor="middle" font-weight="bold">0</text>
-  <text x="120" y="108" fill="#FF8C00" font-size="8" text-anchor="middle">+3</text>
-  <text x="135" y="110" fill="#FF4500" font-size="8" text-anchor="middle">+6</text>
-  
-  <!-- Needle (pointing to optimal level) -->
-  <g filter="url(#glow)">
-    <line x1="100" y1="120" x2="105" y2="85" stroke="#FF8C00" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="100" cy="120" r="4" fill="#FF8C00"/>
+  <!-- Icon (scaled to 50px) -->
+  <g transform="translate(5, 5)">
+    <!-- Base platform -->
+    <rect x="0" y="35" width="50" height="10" rx="2" fill="#5A7220"/>
+    
+    <!-- Left pillar -->
+    <rect x="3" y="21" width="10" height="17" rx="1.5" fill="url(#lockupGrad)"/>
+    
+    <!-- Center pillar (tallest) -->
+    <rect x="20" y="5" width="10" height="33" rx="1.5" fill="url(#lockupGrad)"/>
+    
+    <!-- Right pillar -->
+    <rect x="37" y="15" width="10" height="23" rx="1.5" fill="url(#lockupGrad)"/>
   </g>
   
-  <!-- VU Label -->
-  <text x="100" y="140" fill="#FF8C00" font-size="12" text-anchor="middle" font-weight="bold" font-family="monospace">VU</text>
+  <!-- Divider line -->
+  <rect x="62" y="15" width="2" height="30" rx="1" fill="#8FB339" opacity="0.4"/>
   
-  <!-- Accent Glow -->
-  <rect x="40" y="60" width="120" height="80" rx="4" fill="url(#meterGlow)" opacity="0.1"/>
+  <!-- Wordmark -->
+  <text x="75" y="42" 
+        font-family="'Work Sans', sans-serif" 
+        font-weight="700" 
+        font-size="32" 
+        fill="#8FB339">AMP</text>
+  <text x="145" y="42" 
+        font-family="'Work Sans', sans-serif" 
+        font-weight="500" 
+        font-size="32" 
+        fill="#5A7220">SPOT</text>
 </svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!--
+    "The Rampart" v3 - Audio Waveform Integration
+    Merlons styled as VU meter / spectrum bars
+    Inner detail for definition while maintaining scalability
+    Green (#8FB339) for Amp Spot audio brand
+  -->
+  
+  <defs>
+    <!-- Vertical gradient for depth -->
+    <linearGradient id="audioGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A3C94A"/>
+      <stop offset="50%" style="stop-color:#8FB339"/>
+      <stop offset="100%" style="stop-color:#6B8A28"/>
+    </linearGradient>
+    
+    <!-- Subtle inner shadow for definition -->
+    <linearGradient id="innerDepth" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5A7220;stop-opacity:0.3"/>
+      <stop offset="20%" style="stop-color:#5A7220;stop-opacity:0"/>
+      <stop offset="80%" style="stop-color:#5A7220;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#5A7220;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Base platform (foundation) - darker for contrast -->
+  <rect x="6" y="68" width="88" height="24" rx="4" fill="#5A7220"/>
+  
+  <!-- Inner detail line on base -->
+  <rect x="10" y="72" width="80" height="2" rx="1" fill="#8FB339" opacity="0.6"/>
+  
+  <!-- Left pillar (lower level - represents bass) -->
+  <rect x="10" y="38" width="20" height="35" rx="3" fill="url(#audioGrad)"/>
+  <rect x="10" y="38" width="20" height="35" rx="3" fill="url(#innerDepth)"/>
+  <!-- Level indicator line -->
+  <rect x="14" y="42" width="12" height="2" rx="1" fill="#BADA55" opacity="0.7"/>
+  
+  <!-- Center pillar (tallest - represents mids/peak) -->
+  <rect x="40" y="14" width="20" height="59" rx="3" fill="url(#audioGrad)"/>
+  <rect x="40" y="14" width="20" height="59" rx="3" fill="url(#innerDepth)"/>
+  <!-- Level indicator lines -->
+  <rect x="44" y="18" width="12" height="2" rx="1" fill="#BADA55" opacity="0.8"/>
+  <rect x="44" y="24" width="12" height="2" rx="1" fill="#A3C94A" opacity="0.6"/>
+  
+  <!-- Right pillar (mid level - represents highs) -->
+  <rect x="70" y="32" width="20" height="41" rx="3" fill="url(#audioGrad)"/>
+  <rect x="70" y="32" width="20" height="41" rx="3" fill="url(#innerDepth)"/>
+  <!-- Level indicator line -->
+  <rect x="74" y="36" width="12" height="2" rx="1" fill="#BADA55" opacity="0.7"/>
+  
+  <!-- Subtle highlight on top edges -->
+  <rect x="10" y="38" width="20" height="3" rx="1.5" fill="#BADA55" opacity="0.4"/>
+  <rect x="40" y="14" width="20" height="3" rx="1.5" fill="#BADA55" opacity="0.5"/>
+  <rect x="70" y="32" width="20" height="3" rx="1.5" fill="#BADA55" opacity="0.4"/>
+</svg>
