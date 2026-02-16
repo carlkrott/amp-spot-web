@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login/
+
+Sitemap: https://amp-spot.com/sitemap.xml
